@@ -1,4 +1,4 @@
-package com.devsuperior.dsdevilver.model;
+package com.devsuperior.dsdevilver.comum.product.model;
 
 import lombok.*;
 

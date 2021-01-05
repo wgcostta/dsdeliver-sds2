@@ -1,5 +1,6 @@
-package com.devsuperior.dsdevilver.model;
+package com.devsuperior.dsdevilver.order.model;
 
+import com.devsuperior.dsdevilver.comum.product.model.Product;
 import lombok.*;
 
 import javax.persistence.*;
@@ -7,7 +8,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity
 @Getter

@@ -1,4 +1,4 @@
-package com.devsuperior.dsdevilver.model;
+package com.devsuperior.dsdevilver.order.model;
 
 public enum OrderStatus {
     PENDING,
