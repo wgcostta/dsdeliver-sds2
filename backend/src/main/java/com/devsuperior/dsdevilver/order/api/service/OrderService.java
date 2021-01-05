@@ -18,7 +18,7 @@ public class OrderService {
 
     @Transactional(readOnly = true)
     public List<OrderResponse> findAll(){
-        return OrderResponse.fromModels(orderRepository.findAll());
+        return OrderResponse.fromModels(orderRepository.findOrdersWithProducts());
     }
 
     @Transactional(readOnly = true)
