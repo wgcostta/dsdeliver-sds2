@@ -1,2 +1,6 @@
-package com.devsuperior.dsdevilver.model;public enum OrderStatus {
+package com.devsuperior.dsdevilver.model;
+
+public enum OrderStatus {
+    PENDING,
+    DELIVERED
 }
