@@ -39,15 +39,6 @@ public class SwaggerConfig {
                 .globalResponseMessage(RequestMethod.GET, responseMessageForGET());
     }
 
-//    private ApiInfo buildApiInfo() {
-//        return new ApiInfoBuilder()
-//                .title(API_TITLE)
-//                .description(API_DESCRIPTION)
-//                .version("1.0.0")
-//                .contact(new Contact(CONTACT_NAME, CONTACT_GITHUB, CONTACT_EMAIL))
-//                .build();
-//    }
-
     private List<ResponseMessage> responseMessageForGET()
     {
         return new ArrayList<ResponseMessage>() {{
