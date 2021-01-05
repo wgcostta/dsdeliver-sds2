@@ -28,6 +28,7 @@ public class Order implements Serializable {
     private Double latitude;
     private Double longitude;
     private Instant moment;
+    @Setter
     private OrderStatus status;
 
     @Setter

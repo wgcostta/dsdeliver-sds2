@@ -1,16 +1,14 @@
 package com.devsuperior.dsdevilver.order.api;
 
-import com.devsuperior.dsdevilver.comum.product.api.model.ProductResponse;
-import com.devsuperior.dsdevilver.order.OrderRepository;
+import com.devsuperior.dsdevilver.order.api.model.OrderRequest;
 import com.devsuperior.dsdevilver.order.api.model.OrderResponse;
 import com.devsuperior.dsdevilver.order.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,4 +30,24 @@ public class OrderController {
                 .body(orderService.findAll()
                 );
     }
+
+    @PostMapping
+    public ResponseEntity<OrderResponse> salvar(@RequestBody @Valid OrderRequest orderRequest){
+        OrderResponse orderResponse = orderService.save(orderRequest);
+
+        return ResponseEntity.created(ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/")
+                .path(orderResponse.getId().toString()).build().toUri())
+                .body(orderResponse);
+    }
+
+    @PutMapping("/{id}/delivered")
+    public ResponseEntity<OrderResponse> atualizarStatus(@PathVariable Long id){
+        return  ResponseEntity
+                .ok()
+                .body(orderService.setDelivered(id)
+                );
+    }
+
 }
