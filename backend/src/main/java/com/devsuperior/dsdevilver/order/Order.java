@@ -1,4 +1,4 @@
-package com.devsuperior.dsdevilver.order.model;
+package com.devsuperior.dsdevilver.order;
 
 import com.devsuperior.dsdevilver.comum.product.model.Product;
 import lombok.*;
@@ -30,6 +30,7 @@ public class Order implements Serializable {
     private Instant moment;
     private OrderStatus status;
 
+    @Setter
     @ManyToMany
     @JoinTable(name = "tb_order_product",
         joinColumns = @JoinColumn(name = "order_id"),
