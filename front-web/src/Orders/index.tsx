@@ -38,7 +38,7 @@ function Orders() {
   }
 
   const handleSubmit = () => {
-    if(orderLocation?.address == ""){
+    if(orderLocation?.address === ""){
       toast.warning('Selecione o endereço');
     }else{
       const productsIds = selectedProducts.map(({ id }) => ({ id }));
