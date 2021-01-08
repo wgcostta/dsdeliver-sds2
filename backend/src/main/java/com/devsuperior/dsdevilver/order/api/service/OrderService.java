@@ -36,8 +36,8 @@ public class OrderService {
     @Transactional
     public OrderResponse save(OrderRequest request){
         Order order = request.toModel();
-        for(Long id : request.getProductsId()){
-            Product product = productRepository.getOne(id);
+        for(Product productRequest : request.getProductsId()){
+            Product product = productRepository.getOne(productRequest.getId());
             order.getProducts().add(product);
         }
         order = orderRepository.save(order);

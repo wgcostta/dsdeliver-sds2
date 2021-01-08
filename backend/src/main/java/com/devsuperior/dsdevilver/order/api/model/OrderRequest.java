@@ -1,5 +1,6 @@
 package com.devsuperior.dsdevilver.order.api.model;
 
+import com.devsuperior.dsdevilver.comum.product.model.Product;
 import com.devsuperior.dsdevilver.order.Order;
 import com.devsuperior.dsdevilver.order.OrderStatus;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ public class OrderRequest {
     @NotBlank
     private OrderStatus status;
     @NotBlank
-    private List<Long> productsId;
+    private List<Product> productsId;
 
     public Order toModel(){
         return Order.builder()
