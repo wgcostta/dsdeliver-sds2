@@ -5,10 +5,7 @@ import com.devsuperior.dsdevilver.comum.product.model.ProductRepository;
 import com.devsuperior.dsdevilver.order.Order;
 import com.devsuperior.dsdevilver.order.OrderRepository;
 import com.devsuperior.dsdevilver.order.OrderStatus;
-import com.devsuperior.dsdevilver.order.api.model.OrderNaoEstaPendenteException;
-import com.devsuperior.dsdevilver.order.api.model.OrderNotEncontredException;
-import com.devsuperior.dsdevilver.order.api.model.OrderResponse;
-import com.devsuperior.dsdevilver.order.api.model.OrderRequest;
+import com.devsuperior.dsdevilver.order.api.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,7 +33,7 @@ public class OrderService {
     @Transactional
     public OrderResponse save(OrderRequest request){
         Order order = request.toModel();
-        for(Product productRequest : request.getProductsId()){
+        for(OrderProductRequest productRequest : request.getProductsId()){
             Product product = productRepository.getOne(productRequest.getId());
             order.getProducts().add(product);
         }
