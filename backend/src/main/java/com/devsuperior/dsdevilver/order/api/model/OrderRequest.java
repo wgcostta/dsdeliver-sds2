@@ -6,21 +6,22 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 public class OrderRequest {
-    @NotBlank
+    @NotNull
     private String address;
-    @NotBlank
+    @NotNull
     private Double latitude;
-    @NotBlank
+    @NotNull
     private Double longitude;
-    @NotBlank
+    @NotNull
     private List<OrderProductRequest> productsId;
 
     public Order toModel(){
@@ -30,6 +31,7 @@ public class OrderRequest {
                 .longitude(this.longitude)
                 .moment(Instant.now())
                 .status(OrderStatus.PENDING)
+                .products(new HashSet<>())
                 .build();
     }
 }
