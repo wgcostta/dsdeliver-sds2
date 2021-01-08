@@ -48,3 +48,4 @@ yarn-error.log*
 
 .eslintcache
 front-web/package-lock.json
+front-web/.env

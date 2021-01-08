@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import AsyncSelect from 'react-select/async';
 import { useState } from 'react';
 import { fetchLocalMapBox } from '../api';
+import { OrderLocationData } from './types';
 
 const initPosition = {
     lat: -22.6669475,
@@ -17,10 +18,16 @@ type Place = {
     }
 }
 
-function OrderLocation() {
+type Props = {
+    onChangeLocation: (location: OrderLocationData) => void;
+}
+
+function OrderLocation({onChangeLocation} : Props) {
     const [address, setAddress] = useState<Place>({
         position: initPosition
     });
+
+    const [OrderLocation, setOrderLocation] = useState<OrderLocationData>();
     
     const loadOptions = async (inputValue: string, callback: (places: Place[]) => void) => {
         const response = await fetchLocalMapBox(inputValue);
@@ -42,11 +49,11 @@ function OrderLocation() {
       
       const handleChangeSelect = (place: Place) => {
         setAddress(place);
-        // onChangeLocation({
-        //   latitude: place.position.lat,
-        //   longitude: place.position.lng,
-        //   address: place.label!
-        // });
+        onChangeLocation({
+          latitude: place.position.lat,
+          longitude: place.position.lng,
+          address: place.label!
+        });
       };
 
   return (
@@ -66,14 +73,17 @@ function OrderLocation() {
             <MapContainer 
             center={address.position} 
             zoom={14} 
-            scrollWheelZoom={false}>
+            key={address.position.lat}
+            scrollWheelZoom
+            
+            >
                 <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker position={address.position}>
                 <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    {address.label}
                 </Popup>
                 </Marker>
             </MapContainer>
