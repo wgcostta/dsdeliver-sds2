@@ -21,10 +21,6 @@ public class OrderRequest {
     @NotBlank
     private Double longitude;
     @NotBlank
-    private Instant moment;
-    @NotBlank
-    private OrderStatus status;
-    @NotBlank
     private List<OrderProductRequest> productsId;
 
     public Order toModel(){
