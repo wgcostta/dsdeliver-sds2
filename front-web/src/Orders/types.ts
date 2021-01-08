@@ -17,5 +17,5 @@ type ProductId = {
 }
 
 export type OrderPayLoad = {
-  products: ProductId[];
+  productsId: ProductId[];
 } & OrderLocationData;

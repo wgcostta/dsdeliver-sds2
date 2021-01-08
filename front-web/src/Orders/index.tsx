@@ -38,20 +38,24 @@ function Orders() {
   }
 
   const handleSubmit = () => {
-    const productsIds = selectedProducts.map(({ id }) => ({ id }));
-    const payload = {
-      ...orderLocation!,
-      products: productsIds
-    }
-  
-    saveOrder(payload).then((response) => {
-      toast.error(`Pedido enviado com sucesso! Numero: ${response.data.id}` );
-      setSelectedProducts([]);
-    })
-      .catch((err) => {
-        console.log(err)
-        toast.warning('Erro ao enviar pedido');
+    if(orderLocation?.address == ""){
+      toast.warning('Selecione o endereço');
+    }else{
+      const productsIds = selectedProducts.map(({ id }) => ({ id }));
+      const payload = {
+        ...orderLocation!,
+        productsId: productsIds
+      }
+      console.log(payload)
+      saveOrder(payload).then((response) => {
+        toast.error(`Pedido enviado com sucesso! Numero: ${response.data.id}` );
+        setSelectedProducts([]);
       })
+        .catch((err) => {
+          console.log(err)
+          toast.warning('Erro ao enviar pedido');
+        })
+    }
   }
 
   return (
