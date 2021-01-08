@@ -1,6 +1,7 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import AsyncSelect from 'react-select/async';
 import { useState } from 'react';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import AsyncSelect from 'react-select/async';
+
 import { fetchLocalMapBox } from '../api';
 import { OrderLocationData } from './types';
 
@@ -26,8 +27,6 @@ function OrderLocation({onChangeLocation} : Props) {
     const [address, setAddress] = useState<Place>({
         position: initPosition
     });
-
-    const [OrderLocation, setOrderLocation] = useState<OrderLocationData>();
     
     const loadOptions = async (inputValue: string, callback: (places: Place[]) => void) => {
         const response = await fetchLocalMapBox(inputValue);
