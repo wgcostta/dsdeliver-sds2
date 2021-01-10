@@ -1,5 +1,43 @@
+import React from 'react';
+import { StyleSheet, View, Text, Alert, Linking } from 'react-native';
+import "intl/locale-data/jsonp/pt-BR.js";
+import { useNavigation } from '@react-navigation/native';
+import Header from '../Header';
+import { Order } from '../types';
+import OrderCard from '../OrderCard';
+import { RectButton } from 'react-native-gesture-handler';
+import { confirmDelivery } from '../api';
+
+type Props = {
+  route: {
+    params: {
+      order: Order
+    }
+  }
+}
 
 export default function OrderDetails({ route }: Props) {
+  const { order } = route.params
+  const navigation = useNavigation()
+
+  const handleOnCancel = () => {
+    navigation.navigate("Orders")
+  }
+
+  const handleConfirmDelivery = () => {
+    confirmDelivery(order.id)
+      .then(() => {
+        Alert.alert(`Pedido ${order.id} confirmado com sucesso`)
+        navigation.navigate('Orders')
+      })
+      .catch(() => {
+        Alert.alert(`Houve um erro ao confirmar o pedido ${order.id}`)
+      })
+  }
+
+  const handleStartNavigation = () => {
+    Linking.openURL(`https://www.google.com/maps/dir/?api=1&travelmode=driving&dir_action=navigate&destination=${order.latitude},${order.longitude}`)
+  }
 
   return (
     <>
