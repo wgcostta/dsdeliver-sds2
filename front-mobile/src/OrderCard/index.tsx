@@ -7,13 +7,31 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import "intl";
 import "intl/locale-data/jsonp/pt-BR.js";
 
+if (Platform.OS === "android") {
+    if (typeof (Intl as any).disableRegExpRestore === "function") {
+        (Intl as any).disableRegExpRestore();
+    }
+}
 
+dayjs.locale('pt-br')
+dayjs.extend(relativeTime)
 
 type Props = {
   order: Order
 }
 
+function dateFromNow(date: string) {
+  return dayjs(date).fromNow()
+}
 
+function formatPrice(price: number) {
+  const formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  })
+
+  return formatter.format(price)
+}
 
 export default function OrderCard({ order }: Props) {
   return (
