@@ -18,9 +18,9 @@ Mobile - React-Native e Expo - Para executar:
 - Em seguida o aplicativo será inicializado no aparelho.
 
 <p align="center">
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/assets/Home.png" height="150" width="175" alt="Logo da DS Delivery" />
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/assets/OrderCard.png" height="150" width="175" alt="Logo da DS Delivery" />
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/assets/OrderList.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/Home.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderCard.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderList.png" height="150" width="175" alt="Logo da DS Delivery" />
 </p>
 
 <br>
@@ -36,11 +36,3 @@ Mobile - React-Native e Expo - Para executar:
   <img src="https://img.shields.io/badge/-Wagner%20Costa-000000?style=flat-square&labelColor=000000&logo=github&logoColor=white"/>
 </a>
 </p>
-
-<--! 
-#Semana DevSuperior 2.0
-Link heroku: https://devsuperior-2021.herokuapp.com/swagger-ui.html
-Link aplicação online: https://devsuperior.netlify.app/
-git subtree push --prefix backend heroku main
-
--->
