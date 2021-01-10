@@ -21,6 +21,16 @@ export default function Orders() {
       .finally(() => setIsLoading(false))
   }
 
+  useEffect(() => {
+    if (isFocused) {
+      setIsLoading(true)
+      fetchOrders()
+        .then(response => setOrders(response.data))
+        .catch(() => Alert.alert('Houve um erro ao buscar os pedidos!'))
+        .finally(() => setIsLoading(false))
+    }
+  }, [isFocused])
+
 
   const handleOnPress = (order: Order) => {
     navigation.navigate("OrderDetails", {
@@ -32,7 +42,18 @@ export default function Orders() {
     <>
       <Header />
       <ScrollView style={styles.container}>
-
+        {isLoading ? (
+          <Text>Buscando pedidos...</Text>
+        ) : (
+            orders.map(order => (
+              <TouchableWithoutFeedback 
+                key={order.id} 
+                onPress={() => handleOnPress(order)}
+              >
+                <OrderCard order={order} />
+              </TouchableWithoutFeedback>
+            ))
+          )}
       </ScrollView>
     </>
   )
