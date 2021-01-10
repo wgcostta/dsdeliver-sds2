@@ -30,17 +30,19 @@ public class OrderResponse implements Serializable {
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
+    private Double total;
     private List<ProductResponse> products;
 
     public static OrderResponse fromModel(@NonNull Order order){
         return
              OrderResponse.builder()
-                .id(order.getId())
-                .address(order.getAddress())
-                .latitude(order.getLatitude())
-                .longitude(order.getLongitude())
-                .status(order.getStatus())
+                     .id(order.getId())
+                     .address(order.getAddress())
+                     .latitude(order.getLatitude())
+                     .longitude(order.getLongitude())
+                     .status(order.getStatus())
                      .products(ProductResponse.fromModels(order.getProducts()))
+                     .total(order.getTotal())
                      .build();
     }
 

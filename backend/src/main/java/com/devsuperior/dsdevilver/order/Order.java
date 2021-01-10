@@ -38,4 +38,12 @@ public class Order implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "product_id"))
     private Set<Product> products = new HashSet<>();
 
+    public Double getTotal(){
+        double sum = 0.0;
+        for(Product product : products){
+            sum += product.getPrice();
+        }
+        return sum;
+    }
+
 }
