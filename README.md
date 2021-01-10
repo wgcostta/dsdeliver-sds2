@@ -5,11 +5,11 @@
 
 [Backend: Java com Springboot Framework e JPA / Hibernate e PostgreSQL (Heroku/Swagger)](https://devsuperior-2021.herokuapp.com/swagger-ui.html)
 
-Endpoints:
-[GET] /products
-[GET] /orders
-[POST] /orders
-[PUT] /orders/{id}/delivered
+- Endpoints:
+  - [GET] /products
+  - [GET] /orders
+  - [POST] /orders
+  - [PUT] /orders/{id}/delivered
 
 Mobile - React-Native e Expo - Para executar:
 - Baixar o projeto e abrir a pasta mobile
@@ -18,9 +18,9 @@ Mobile - React-Native e Expo - Para executar:
 - Em seguida o aplicativo será inicializado no aparelho.
 
 <p align="center">
-    <img src="https://github.com/wgcostta/dsdelivery/assets/Home.png" height="150" width="175" alt="Logo da DS Delivery" />
-    <img src="https://github.com/wgcostta/dsdelivery/assets/OrderCard.png" height="150" width="175" alt="Logo da DS Delivery" />
-    <img src="https://github.com/wgcostta/dsdelivery/assets/OrderList.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/assets/Home.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/assets/OrderCard.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/assets/OrderList.png" height="150" width="175" alt="Logo da DS Delivery" />
 </p>
 
 <br>
