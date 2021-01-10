@@ -18,9 +18,9 @@
 - Em seguida o aplicativo será inicializado no aparelho.
 
 <p align="center">
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/Home.png" height="200" width="100" alt="Logo da DS Delivery" />
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderCard.png" height="150" width="175" alt="Logo da DS Delivery" />
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderList.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/Home.png" height="250" width="125" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderCard.png" height="250" width="125" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderList.png" height="250" width="125" alt="Logo da DS Delivery" />
 </p>
 
 <br>
