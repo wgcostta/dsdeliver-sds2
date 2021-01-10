@@ -11,14 +11,14 @@
   - [POST] /orders
   - [PUT] /orders/{id}/delivered
 
-Mobile - React-Native e Expo - Para executar:
+##Mobile - React-Native e Expo - Para executar:
 - Baixar o projeto e abrir a pasta mobile
 - Executar npm install para instalar as dependências e npm start para iniciar o build com Expo.
 - Baixar o Expo no celular com Android e Google Maps e scanear o QR-Code.
 - Em seguida o aplicativo será inicializado no aparelho.
 
 <p align="center">
-    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/Home.png" height="150" width="175" alt="Logo da DS Delivery" />
+    <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/Home.png" height="200" width="100" alt="Logo da DS Delivery" />
     <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderCard.png" height="150" width="175" alt="Logo da DS Delivery" />
     <img src="https://github.com/wgcostta/dsdeliver-sds2/blob/main/assets/OrderList.png" height="150" width="175" alt="Logo da DS Delivery" />
 </p>
