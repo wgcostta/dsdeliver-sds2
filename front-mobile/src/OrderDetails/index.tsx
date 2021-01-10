@@ -5,7 +5,16 @@ export default function OrderDetails({ route }: Props) {
     <>
       <Header />
       <View style={styles.container}>
-
+        <OrderCard order={order}/>
+        <RectButton style={styles.button} onPress={handleStartNavigation}>
+          <Text style={styles.buttonText}>INICIAR NAVEGAÇÃO</Text>
+        </RectButton>
+        <RectButton style={styles.button} onPress={handleConfirmDelivery}>
+          <Text style={styles.buttonText}>CONFIRMAR ENTREGA</Text>
+        </RectButton>
+        <RectButton style={styles.button} onPress={handleOnCancel}>
+          <Text style={styles.buttonText}>CANCELAR</Text>
+        </RectButton>
       </View>
     </>
   );
