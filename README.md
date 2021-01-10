@@ -1,9 +1,9 @@
 <h1 align="center">DS Delivery</h1>
 <p align="center">Projeto realizado durante a Semana DevSuperior 2.0</p>
 
-## [Frontend: ReactJS com Axios (Netlify)](https://devsuperior.netlify.app/)
+### [Frontend: ReactJS com Axios (Netlify)](https://devsuperior.netlify.app/)
 
-## [Backend: Java com Springboot Framework e JPA / Hibernate e PostgreSQL (Heroku/Swagger)](https://devsuperior-2021.herokuapp.com/swagger-ui.html)
+### [Backend: Java com Springboot Framework e JPA / Hibernate e PostgreSQL (Heroku/Swagger)](https://devsuperior-2021.herokuapp.com/swagger-ui.html)
 
 - Endpoints:
   - [GET] /products
@@ -11,7 +11,7 @@
   - [POST] /orders
   - [PUT] /orders/{id}/delivered
 
-## Mobile - React-Native e Expo - Para executar:
+### Mobile - React-Native e Expo - Para executar:
 - Baixar o projeto e abrir a pasta mobile
 - Executar npm install para instalar as dependências e npm start para iniciar o build com Expo.
 - Baixar o Expo no celular com Android e Google Maps e scanear o QR-Code.
