@@ -1,15 +1,33 @@
-import 'dayjs/locale/pt-br';
-import 'intl';
-import 'intl/locale-data/jsonp/pt-BR.js';
-
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, Platform } from 'react-native';
+import { Order } from '../types';
+import dayjs from 'dayjs'
+import 'dayjs/locale/pt-br'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import "intl";
+import "intl/locale-data/jsonp/pt-BR.js";
+
+
+
+type Props = {
+  order: Order
+}
+
 
 
 export default function OrderCard({ order }: Props) {
   return (
     <View style={styles.container}>
-      
+      <View style={styles.header}>
+        <Text style={styles.orderName}>Pedido {order.id}</Text>
+        <Text style={styles.orderPrice}>{formatPrice(order.total)}</Text>
+      </View>
+      <Text style={styles.text}>{dateFromNow(order.moment)}</Text>
+      <View style={styles.productsList}>
+        {order.products.map(product => (
+          <Text key={product.id} style={styles.text}>{product.name}</Text>
+        ))}
+      </View>
     </View>
   );
 }
